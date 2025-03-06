@@ -67,7 +67,9 @@ This project analyzes cricket match data from **Cricsheet JSON files** to genera
 This project is **not affiliated with Dream11**. It is an independent tool for analyzing cricket match data to assist with Dream11 fantasy team selection. Use it responsibly and at your own discretion.
 
 ## License
-MIT License
+This project is licensed under the following conditions:
+1. Individuals may use this project for personal or commercial purposes.
+2. Companies or organizations must obtain explicit permission before using, modifying, or integrating this project into their operations.
 
 ## Acknowledgment
 This project, including the scripts and README, was generated with the assistance of **ChatGPT**.
