@@ -1,5 +1,4 @@
 # Match Statistics For Dream11 Fantasy Games
-# Dream11 Match Statistics Analysis
 
 ## Overview
 This project analyzes cricket match data from **Cricsheet JSON files** to generate statistics for Dream11 fantasy games. It includes multiple Python scripts that process match data, calculate fantasy points, and provide performance analytics for players and teams.
