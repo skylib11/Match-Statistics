@@ -1,11 +1,14 @@
 # Match Statistics For Dream11 Fantasy Games
+# Dream11 Match Statistics Analysis
 
 ## Overview
-This project analyzes cricket match data from **Cricsheet JSON files** to generate statistics and insights for Dream11 fantasy games. It includes multiple Python scripts that process match data, calculate fantasy points, and provide performance analytics for players and teams.
+This project analyzes cricket match data from **Cricsheet JSON files** to generate statistics for Dream11 fantasy games. It includes multiple Python scripts that process match data, calculate fantasy points, and provide performance analytics for players and teams.
 
 ## Features
 - Extracts and analyzes cricket data for Dream11 fantasy predictions.
 - Uses **Cricsheet JSON files** as the primary data source.
+- Requires the user to manually download and extract Cricsheet JSON files.
+- Combines extracted JSON files using **jq**, saving them as `odi_matches.json`.
 - Calculates Dream11 fantasy points based on real match performances.
 - Compares player vs. player and team vs. team statistics.
 - Evaluates toss and venue impact on match outcomes.
@@ -25,6 +28,7 @@ This project analyzes cricket match data from **Cricsheet JSON files** to genera
 | `venue_analysis.py`            | Studies venue-based performance trends. |
 | `sum_all_fantasy_points.py`    | Aggregates and summarizes fantasy points for all players. |
 | `squad.csv`                    | Contains player and team details used for analysis. |
+| `odi_matches.json`             | Combined match data extracted from Cricsheet JSON files using jq. |
 
 ## Installation
 1. Clone this repository:
@@ -35,22 +39,26 @@ This project analyzes cricket match data from **Cricsheet JSON files** to genera
    ```sh
    cd dream11-stats
    ```
-3. Install required dependencies:
-   ```sh
-   pip install -r requirements.txt
    ```
 
 ## Usage
-1. Download **Cricsheet JSON files** and place them in the designated data folder.
-2. Ensure that `squad.csv` is properly formatted with the required player details.
-3. Run the scripts based on the required analysis:
+1. **Download** Cricsheet JSON files from [Cricsheet](https://cricsheet.org/downloads/).
+2. **Extract** the downloaded files manually.
+3. **Combine** the extracted JSON files using the following `jq` command:
    ```sh
-   python dream11_points_calculator.py
+   jq -s '.' path_to_extracted_json_files/*.json > odi_matches.json
+   ```
+   - This will merge all extracted JSON files into `odi_matches.json`.
+   - Ensure that `odi_matches.json` is placed in the same directory as the scripts.
+4. Ensure that `squad.csv` is properly formatted with the required player details.
+5. Run the scripts based on the required analysis:
+   ```sh
+   python3 dream11_points_calculator.py
    ```
    ```sh
-   python team_stats.py
+   python3 team_stats.py
    ```
-4. Review the generated insights and statistics for player and team performance.
+6. Review the generated insights and statistics for player and team performance.
 
 ## Privacy & Security
 - This tool works **locally**, ensuring your data remains private.
@@ -62,6 +70,6 @@ This project is **not affiliated with Dream11**. It is an independent tool for a
 ## License
 MIT License
 
----
-For suggestions or contributions, feel free to raise an issue or submit a pull request!
+## Acknowledgment
+This project, including the scripts and README, was generated with the assistance of **ChatGPT**.
 
