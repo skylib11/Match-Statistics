@@ -32,7 +32,7 @@ This project analyzes cricket match data from **Cricsheet JSON files** to genera
 ## Installation
 1. Clone this repository:
    ```sh
-   git clone https://github.com/yourusername/dream11-stats.git
+   git clone https://github.com/skylib11/Match_Statistics
    ```
 2. Navigate to the project directory:
    ```sh
